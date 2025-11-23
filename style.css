@@ -46,7 +46,6 @@ ul {
 
 a {
     text-decoration: none;
-    color: #fff;
 }
 
 button {
@@ -59,9 +58,17 @@ img {
     width: 100%;
 }
 
+section-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
 /* Navbar styling*/
 header {
     background: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
 }
 
 header .navbar {
@@ -73,6 +80,10 @@ header .navbar {
 
 .navbar .nav-logo .logo-text {
     color: var(--white-color);
+}
+
+.navbar .nav-logo .logo-text:hover {
+    color: var(--yellow-soft-color);
 }
 
 .navbar .nav-menu {
@@ -92,3 +103,17 @@ header .navbar {
     color: var(--yellow-soft-color);
     background-color: var(--secondary-color);
 }
+
+.hero-section {
+    min-height: 100vh;
+    background: var(--primary-color);
+}
+
+.hero-section .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--white-color);
+    justify-content: space-between;
+}
+
