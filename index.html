@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GCME Web</title>
+    <title>Portafolio || Gabriel Carmelo Morales Espejo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,27 +11,25 @@
     <header>
         <nav class="navbar section-content">
             <a href="#" class="nav-logo">
-                <h2 class="logo-text"> <i class="fas fa-computer"></i> GABRIEL C. MORALES E.</h2>
+                <h2 class="logo-text"> <i class="fas fa-keyboard"></i> GCME</h2>
                 
             </a>
             <ul class="nav-menu">
                 <button id="menu-close-button" class="fas fa-times"></button>
-
                 <li>
-                    
                     <a href="#" class="nav-link"> <i class="fas fa-house"></i> INICIO</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link"> <i class="fas fa-diagram-project"></i> PROYECTOS</a>
+                    <a href="#sobre-mi" class="nav-link"><i class="fas fa-user"></i> SOBRE MI</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link"> <i class="fas fa-code"></i> HABILIDADES</a>
+                    <a href="#habilidades" class="nav-link"> <i class="fas fa-code"></i> HABILIDADES</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link"> <i class="fas fa-envelope"></i> CONTACTO</a>
+                    <a href="#proyectos" class="nav-link"> <i class="fas fa-diagram-project"></i> PROYECTOS</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link"><i class="fas fa-user"></i> SOBRE MI</a>
+                    <a href="#contacto" class="nav-link"> <i class="fas fa-envelope"></i> CONTACTO</a>
                 </li>
             </ul>
 
@@ -57,6 +55,61 @@
                 </div>
             </div>
         </section>
+        <section id="sobre-mi" class="about-section">
+    <div class="section-content">
+        <h2 class="section-title" data-i18n="about.title">SOBRE MÍ</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/yo.png" alt="Gabriel Morales">
+            </div>
+            <div class="about-details">
+                <p class="about-description" data-i18n="about.description">
+                    Soy ingeniero de sistemas apasionado por el desarrollo de software...
+                </p>
+                <ul class="about-info">
+                    <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="about.location">Bolivia</span></li>
+                    <li><i class="fas fa-graduation-cap"></i> <span data-i18n="about.degree">Ing. Sistemas</span></li>
+                    <li><i class="fas fa-briefcase"></i> <span data-i18n="about.available">Disponible para trabajar</span></li>
+                </ul>
+                <a href="#contacto" class="about-button" data-i18n="about.cta">Contáctame</a>
+            </div>
+            </div>
+            </div>
+        </section>
+        <section id="habilidades" class="skills-section">
+        <div class="section-content">
+            <h2 class="section-title" data-i18n="skills.title">HABILIDADES</h2>
+            <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologías que manejo</p>
+            <div class="skills-container">
+
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                    <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                    <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                    <div class="skill-bar"><div class="skill-progress" style="--progress: 80%"></div></div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                    <div class="skill-bar"><div class="skill-progress" style="--progress: 75%"></div></div>
+                </div>
+
+                <!-- Agrega las que necesites -->
+            </div>
+        </div>
+    </section>
     </main>
     <script src="script.js"></script>
 </body>
