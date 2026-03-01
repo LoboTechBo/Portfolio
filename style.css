@@ -132,14 +132,14 @@ header .navbar {
 }
 
 .hero-section .hero-details .subtitle {
-    margin-top: 8px;
+    margin-top: 5px;
     max-width: 70%;
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-semibold);
 }
 .hero-section .hero-details .description {
     max-width: 70%;
-    margin: 24px 0 40px;
+    margin: 20px 0 40px;
     font-size: var(--font-size-m);
 }
 .hero-section .hero-details .buttons {
@@ -351,8 +351,8 @@ header .navbar {
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding-top: 100px;
-        gap: 30px;
+        padding-top: 30px;
+        gap: 8px;
     }
 
     /* Texto ocupa todo el ancho */
