@@ -83,7 +83,7 @@ header .navbar {
 }
 
 .navbar .nav-logo .logo-text:hover {
-    color: var(--yellow-soft-color);
+    color: var(--secondary-color);
 }
 
 .navbar .nav-menu {
