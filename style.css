@@ -776,35 +776,35 @@ header .navbar {
 .carousel-wrapper {
     position: relative;
     overflow: hidden;
-    margin: 0 -20px; /* sangra un poco para dar efecto de continuidad */
+    width: 100%;
 }
 
 .carousel-track {
     display: flex;
-    gap: 24px;
-    padding: 20px 40px;
-    transition: transform 0.5s ease;
+    gap: 0; /* ← quitamos el gap, lo manejamos con padding interno */
+    transition: transform 0.6s ease;
     will-change: transform;
 }
 
 /* Card del carrusel */
 .carousel-card {
-    min-width: 320px;
-    max-width: 320px;
+    min-width: 100%; /* ← cada card ocupa el 100% en móvil por defecto */
+    max-width: 100%;
     background: var(--white-color);
     border-radius: var(--border-radius-s);
     overflow: hidden;
     box-shadow: 0 6px 24px rgba(0,0,0,0.09);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
     flex-shrink: 0;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
     display: block;
+    padding: 0 12px; /* espacio lateral en lugar de gap */
+    box-sizing: border-box;
 }
 
 .carousel-card:hover {
-    transform: translateY(-6px);
     box-shadow: 0 12px 36px rgba(0,0,0,0.15);
 }
 

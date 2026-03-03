@@ -54,26 +54,23 @@ if (track) {
 
     // ── 2. Calcula tamaños ──
     function calcSizes() {
-        const trackWidth = track.parentElement.offsetWidth;
-        
-        // En móvil siempre 1 card
-        if (window.innerWidth <= 900) {
-            visibleCount = 1;
-            cardWidth = trackWidth - 40; // 40 = padding lateral
+    const wrapperWidth = track.parentElement.offsetWidth;
 
-            // Aplica el ancho a todas las cards
-            track.querySelectorAll(".carousel-card").forEach(card => {
-                card.style.minWidth = cardWidth + "px";
-                card.style.maxWidth = cardWidth + "px";
-            });
-        } else {
-            track.querySelectorAll(".carousel-card").forEach(card => {
-                card.style.minWidth = "";
-                card.style.maxWidth = "";
-            });
-            cardWidth = track.querySelectorAll(".carousel-card")[0].offsetWidth + 24;
-            visibleCount = Math.max(1, Math.floor(trackWidth / cardWidth));
-        }
+    if (window.innerWidth <= 900) {
+        // Móvil: 1 card exacta al ancho del wrapper
+        visibleCount = 1;
+        cardWidth = wrapperWidth;
+    } else {
+        // Desktop: cards de 320px con gap
+        visibleCount = Math.max(1, Math.floor(wrapperWidth / 344)); // 320 + 24 gap
+        cardWidth = Math.floor(wrapperWidth / visibleCount);
+    }
+
+    // Aplica el ancho calculado a TODAS las cards incluyendo clones
+    track.querySelectorAll(".carousel-card").forEach(card => {
+        card.style.minWidth = cardWidth + "px";
+        card.style.maxWidth = cardWidth + "px";
+    });
     }
 
     // ── 3. Posiciona el track sin animación ──
