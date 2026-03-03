@@ -494,6 +494,530 @@ header .navbar {
     transform: translateY(-3px);
 }
 
+/* ═══════════════════════════════════════
+   PROYECTOS PAGE — proyectos.css
+   ═══════════════════════════════════════ */
+
+/* Nav link activo */
+.navbar .nav-menu .nav-link.active {
+    color: var(--yellow-soft-color);
+    background-color: var(--secondary-color);
+}
+
+/* ── Hero de la página ── */
+.proyectos-main {
+    padding-top: 80px; /* compensa el navbar fijo */
+}
+
+.proyectos-hero {
+    background: linear-gradient(55deg, var(--primary-color), var(--dark-color));
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.proyectos-hero h1 {
+    font-size: var(--font-size-xxl);
+    color: var(--yellow-soft-color);
+    margin-bottom: 10px;
+}
+
+.proyectos-hero p {
+    font-size: var(--font-size-m);
+    color: rgba(255,255,255,0.7);
+}
+
+/* ── Lista de proyectos ── */
+.proyectos-lista {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.proyecto-item {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: flex-start; /* por defecto imagen a la izquierda */
+}
+
+/* Alterna dirección para variedad visual */
+.proyecto-item.reverse {
+    justify-content: flex-end;
+}
+
+/* ── Wrapper de la card con perspective ── */
+.proyecto-card-wrapper {
+    width: 100%;
+    max-width: 900px;
+    perspective: 1200px;
+}
+
+/* ── La card que gira ── */
+.proyecto-card {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+    cursor: pointer;
+    border-radius: var(--border-radius-s);
+}
+
+.proyecto-card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* ── Estilos compartidos frente y reverso ── */
+.proyecto-front,
+.proyecto-back {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius-s);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* ── FRENTE ── */
+.proyecto-front {
+    background: var(--white-color);
+    display: flex;
+    flex-direction: row;
+}
+
+.proyecto-imagen {
+    position: relative;
+    width: 45%;
+    min-height: 280px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.proyecto-card:hover .proyecto-imagen img {
+    transform: scale(1.05);
+}
+
+/* Hint de click sobre la imagen */
+.proyecto-overlay-hint {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 61, 84, 0.75);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: var(--font-size-s);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.proyecto-card:hover .proyecto-overlay-hint {
+    opacity: 1;
+}
+
+.proyecto-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    flex: 1;
+}
+
+.proyecto-info h2 {
+    font-size: var(--font-size-l);
+    color: var(--primary-color);
+}
+
+.proyecto-resumen {
+    font-size: var(--font-size-s);
+    color: #555;
+    line-height: 1.7;
+}
+
+.proyecto-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.proyecto-skills span {
+    padding: 5px 14px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-radius: var(--border-radius-m);
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── REVERSO ── */
+.proyecto-back {
+    background: var(--primary-color);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+    min-height: 280px;
+}
+
+.proyecto-back h2 {
+    color: var(--yellow-soft-color);
+    font-size: var(--font-size-l);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 12px;
+}
+
+.proyecto-back-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.back-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--white-color);
+    font-size: var(--font-size-s);
+    line-height: 1.6;
+}
+
+.back-item i {
+    color: var(--yellow-soft-color);
+    font-size: 1.1rem;
+    margin-top: 2px;
+    min-width: 20px;
+}
+
+.proyecto-back-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.back-btn {
+    padding: 10px 22px;
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-semibold);
+    font-family: "Science Gothic", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.back-btn.github {
+    background: #333;
+    color: var(--white-color);
+}
+
+.back-btn.github:hover {
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+.back-btn.demo {
+    background: var(--yellow-soft-color);
+    color: var(--primary-color);
+}
+
+.back-btn.demo:hover {
+    background: transparent;
+    border-color: var(--yellow-soft-color);
+    color: var(--yellow-soft-color);
+}
+
+/* ── Separador visual entre proyectos ── */
+.proyecto-item:not(:last-child)::after {
+    display: none; /* limpio, sin líneas */
+}
+
+/* ═══════════════════════════════════════
+   CARRUSEL en index.html
+   ═══════════════════════════════════════ */
+
+.projects-section {
+    padding: 80px 0;
+    background: var(--white-color);
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: var(--font-size-xxl);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: var(--font-size-m);
+    margin-bottom: 40px;
+}
+
+/* ── Carrusel ── */
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -20px; /* sangra un poco para dar efecto de continuidad */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    padding: 20px 40px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Card del carrusel */
+.carousel-card {
+    min-width: 320px;
+    max-width: 320px;
+    background: var(--white-color);
+    border-radius: var(--border-radius-s);
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.carousel-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+}
+
+.carousel-card-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.carousel-card:hover .carousel-card-image img {
+    transform: scale(1.06);
+}
+
+.carousel-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 61, 84, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    gap: 8px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.carousel-card:hover .carousel-card-overlay {
+    opacity: 1;
+}
+
+.carousel-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carousel-card-body h3 {
+    font-size: var(--font-size-m);
+    color: var(--primary-color);
+}
+
+.carousel-card-body p {
+    font-size: var(--font-size-s);
+    color: #666;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.carousel-card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.carousel-card-skills span {
+    padding: 3px 10px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-radius: var(--border-radius-m);
+    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Botones de navegación */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.carousel-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--border-radius-circle);
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Dots indicadores */
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--border-radius-circle);
+    background: #ccc;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* Botón ver todos */
+.projects-cta {
+    text-align: center;
+    margin-top: 36px;
+}
+
+.projects-cta a {
+    padding: 12px 32px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.projects-cta a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════
+   CONTACTO RÁPIDO debajo del carrusel
+   ═══════════════════════════════════════ */
+
+.quick-contact {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    text-align: center;
+}
+
+.quick-contact h2 {
+    font-size: var(--font-size-xxl);
+    color: var(--yellow-soft-color);
+    margin-bottom: 10px;
+}
+
+.quick-contact p {
+    color: rgba(255,255,255,0.8);
+    font-size: var(--font-size-m);
+    margin-bottom: 36px;
+}
+
+.quick-contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.qc-btn {
+    padding: 12px 26px;
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-semibold);
+    font-family: "Science Gothic", sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.qc-btn.linkedin { background: #0077b5; color: #fff; }
+.qc-btn.linkedin:hover { background: transparent; border-color: #fff; color: #fff; }
+
+.qc-btn.github { background: #333; color: #fff; }
+.qc-btn.github:hover { background: transparent; border-color: #fff; color: #fff; }
+
+.qc-btn.whatsapp { background: #25d366; color: #fff; }
+.qc-btn.whatsapp:hover { background: transparent; border-color: #fff; color: #fff; }
+
+.qc-btn.email { background: var(--yellow-soft-color); color: var(--primary-color); }
+.qc-btn.email:hover { background: transparent; border-color: var(--yellow-soft-color); color: var(--yellow-soft-color); }
+
 
 @media screen and (max-width: 900px) {
     :root {
@@ -608,5 +1132,43 @@ header .navbar {
         gap: 16px;
         text-align: center;
     }
+     .proyecto-front {
+        flex-direction: column;
+    }
 
+    .proyecto-imagen {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .proyecto-item,
+    .proyecto-item.reverse {
+        justify-content: center;
+    }
+
+    .proyecto-back {
+        padding: 24px;
+    }
+
+    .proyecto-back-links {
+        flex-direction: column;
+    }
+
+    .back-btn {
+        justify-content: center;
+    }
+
+    .carousel-track {
+        padding: 20px 20px;
+    }
+
+    .carousel-card {
+        min-width: 280px;
+        max-width: 280px;
+    }
+
+    .quick-contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 }
