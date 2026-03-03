@@ -1158,17 +1158,20 @@ header .navbar {
         justify-content: center;
     }
 
-    .carousel-track {
-        padding: 20px 20px;
-    }
-
-    .carousel-card {
-        min-width: 280px;
-        max-width: 280px;
-    }
-
     .quick-contact-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    .carousel-track {
+        padding: 10px 20px; /* centra visualmente el track */
+    }
+
+    .carousel-card {
+        border-radius: 12px;
+        margin: 0 auto;
+    }
+
+    .carousel-wrapper {
+        padding: 0; /* sin padding extra en el wrapper */
     }
 }

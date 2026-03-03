@@ -57,16 +57,14 @@ if (track) {
     const wrapperWidth = track.parentElement.offsetWidth;
 
     if (window.innerWidth <= 900) {
-        // Móvil: 1 card exacta al ancho del wrapper
         visibleCount = 1;
-        cardWidth = wrapperWidth;
+        const margin = 40; // ← margen total (20px cada lado)
+        cardWidth = wrapperWidth - margin;
     } else {
-        // Desktop: cards de 320px con gap
-        visibleCount = Math.max(1, Math.floor(wrapperWidth / 344)); // 320 + 24 gap
+        visibleCount = Math.max(1, Math.floor(wrapperWidth / 344));
         cardWidth = Math.floor(wrapperWidth / visibleCount);
     }
 
-    // Aplica el ancho calculado a TODAS las cards incluyendo clones
     track.querySelectorAll(".carousel-card").forEach(card => {
         card.style.minWidth = cardWidth + "px";
         card.style.maxWidth = cardWidth + "px";
